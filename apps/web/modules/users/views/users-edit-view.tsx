@@ -12,6 +12,7 @@ interface User {
   name: string | null;
   email: string;
   username: string | null;
+  password?: string;
   bio: string | null;
   timeZone: string;
   weekStart: string;
@@ -52,6 +53,7 @@ export function UsersEditView({ user }: { user: User }) {
           name: values.name,
           email: values.email,
           username: values.username,
+          password: values?.password,
           bio: values.bio,
           timeZone: values.timeZone,
           weekStart: values.weekStart?.value,

@@ -6,6 +6,9 @@ import { router } from "@calcom/trpc/server/trpc";
 import type { inferRouterOutputs } from "@trpc/server";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
+import { hashPassword } from "@calcom/lib/auth/hashPassword";
+import { IdentityProvider } from "@calcom/prisma/enums";
+import { Prisma } from '@prisma/client';
 
 export type UserAdminRouter = typeof userAdminRouter;
 export type UserAdminRouterOutputs = inferRouterOutputs<UserAdminRouter>;
@@ -29,6 +32,29 @@ const userBodySchema = UserSchema.pick({
   identityProvider: true,
   role: true,
   avatarUrl: true,
+});
+
+const editUserBodySchema = UserSchema.pick({
+  name: true,
+  email: true,
+  username: true,
+  bio: true,
+  timeZone: true,
+  weekStart: true,
+  theme: true,
+  defaultScheduleId: true,
+  locale: true,
+  timeFormat: true,
+  // brandColor: true,
+  // darkBrandColor: true,
+  allowDynamicBooking: true,
+  identityProvider: true,
+  role: true,
+  avatarUrl: true,
+})
+.extend({
+  // Add password here with your desired validation rules
+  password: z.string().nullable().optional(), 
 });
 
 /** Reusable logic that checks for admin permissions and if the requested user exists */
@@ -62,16 +88,58 @@ export const userAdminRouter = router({
   }),
   add: authedAdminProcedure.input(userBodySchema).mutation(async ({ ctx, input }) => {
     const { prisma } = ctx;
-    const user = await prisma.user.create({ data: { ...input, creationSource: CreationSource.WEBAPP } });
+    const user = await prisma.user.create({ 
+      data: { 
+        ...input,
+        password: {
+          create: {
+            hash: await hashPassword(`${input.email}_admin`),
+          },
+        },
+        emailVerified: new Date(),
+        identityProvider: IdentityProvider.CAL,
+        identityProviderId: null,
+        creationSource: CreationSource.WEBAPP 
+      } 
+    });
     return { user, message: `User with id: ${user.id} added successfully` };
   }),
   update: authedAdminProcedureWithRequestedUser
-    .input(userBodySchema.partial())
+    .input(editUserBodySchema.partial())
     .mutation(async ({ ctx, input }) => {
       const { prisma, requestedUser } = ctx;
 
+      // 1. Destructure out the password AND the id (and anything else Prisma shouldn't update)
+      // This ensures `dataToUpdate` ONLY contains valid, updatable database fields.
+      const { password, ...dataToUpdate } = input;
+
+      // 2. Hash the password ONLY if it was provided
+      const hashedPassword =
+        password && password.trim().length > 0
+            ? await hashPassword(password)
+            : null;
+
+      // 3. Run the Prisma update directly
       const user = await prisma.$transaction(async (tx) => {
-        const userInternal = await tx.user.update({ where: { id: requestedUser.id }, data: input });
+        const userInternal = await tx.user.update({ 
+          where: { 
+            id: requestedUser.id 
+          }, 
+          data: {
+            // Spread the safe, filtered input
+            ...dataToUpdate,
+            
+            // Conditionally add the password payload inline
+            ...(hashedPassword && {
+              password: {
+                upsert: {
+                  create: { hash: hashedPassword },
+                  update: { hash: hashedPassword },
+                }
+              }
+            })
+          }
+        });
 
         // If the profile has been moved to an Org -> we can easily access the profile we need to update
         if (requestedUser.movedToProfileId && input.username) {

@@ -7,7 +7,7 @@ import { defaultLocaleOption, localeOptions } from "@calcom/lib/i18n";
 import { nameOfDay } from "@calcom/lib/weekday";
 import { Avatar } from "@calcom/ui/components/avatar";
 import { Button } from "@calcom/ui/components/button";
-import { EmailField, Form, Label, Select, TextField } from "@calcom/ui/components/form";
+import { EmailField, Form, Label, Select, TextField, PasswordField } from "@calcom/ui/components/form";
 import { ImageUploader } from "@calcom/ui/components/image-uploader";
 import { TimezoneSelect } from "@calcom/web/modules/timezone/components/TimezoneSelect";
 import { noop } from "lodash";
@@ -18,6 +18,7 @@ interface User {
   name: string | null;
   email: string;
   username: string | null;
+  password?: string;
   bio: string | null;
   timeZone: string;
   weekStart: string;
@@ -51,6 +52,7 @@ export type FormValues = Pick<
   | "avatarUrl"
   | "name"
   | "username"
+  | "password"
   | "email"
   | "bio"
   | "createdDate"
@@ -105,6 +107,7 @@ export function UserForm({
       avatarUrl: defaultValues?.avatarUrl || null,
       name: defaultValues?.name,
       username: defaultValues?.username,
+      password: "",
       email: defaultValues?.email,
       bio: defaultValues?.bio,
       theme: defaultValues?.theme || null,
@@ -212,6 +215,7 @@ export function UserForm({
       />
       <TextField label={t("name")} placeholder="example" required {...form.register("name")} />
       <TextField label={t("username")} placeholder="example" required {...form.register("username")} />
+      <PasswordField label={t("password")} placeholder="•••••••••••••" {...form.register("password")} />
       <EmailField label={t("email")} placeholder="user@example.com" required {...form.register("email")} />
       <TextField label={t("about")} {...form.register("bio")} />
       <Controller
