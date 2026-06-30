@@ -409,7 +409,7 @@ model User {
   password            UserPassword?
   bio                 String?
   avatarUrl           String?
-  timeZone            String               @default("Europe/London")
+  timeZone            String               @default("Africa/Johannesburg")
   travelSchedules     TravelSchedule[]
   weekStart           String               @default("Sunday")
   bufferTime          Int                  @default(0)
@@ -427,7 +427,7 @@ model User {
   schedules           Schedule[]
   defaultScheduleId   Int?
   selectedCalendars   SelectedCalendar[]
-  completedOnboarding Boolean              @default(false)
+  completedOnboarding Boolean              @default(true)
   locale              String?
   timeFormat          Int?                 @default(12)
   twoFactorSecret     String?
@@ -591,7 +591,7 @@ model Team {
   inviteTokens           VerificationToken[]
   webhooks               Webhook[]
   timeFormat             Int?
-  timeZone               String                  @default("Europe/London")
+  timeZone               String                  @default("Africa/Johannesburg")
   weekStart              String                  @default("Sunday")
   apiKeys                ApiKey[]
   credentials            Credential[]
