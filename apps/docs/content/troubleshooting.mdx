@@ -3,7 +3,7 @@ title: "Troubleshooting"
 icon: "triangle-exclamation"
 ---
 
-This guide covers the most common issues encountered when self-hosting Cal.diy, along with their solutions.
+This guide covers the most common issues encountered when self-hosting Cal.ly, along with their solutions.
 
 ## Onboarding / Setup Issues
 
@@ -37,9 +37,9 @@ Related issue: [#25993](https://github.com/calcom/cal.diy/issues/25993)
 
 ### Redirect to `localhost:3000` After Deployment
 
-**Symptom:** After deploying Cal.diy to a server or domain, login redirects or internal links point back to `http://localhost:3000` instead of your actual domain.
+**Symptom:** After deploying Cal.ly to a server or domain, login redirects or internal links point back to `http://localhost:3000` instead of your actual domain.
 
-**Cause:** The environment variables `NEXTAUTH_URL` and `NEXT_PUBLIC_WEBAPP_URL` are not set to your production domain. These variables tell Cal.diy and NextAuth where the app is hosted.
+**Cause:** The environment variables `NEXTAUTH_URL` and `NEXT_PUBLIC_WEBAPP_URL` are not set to your production domain. These variables tell Cal.ly and NextAuth where the app is hosted.
 
 **Solution:** Update your `.env` file to use your actual domain:
 
@@ -139,7 +139,7 @@ This allows the container to resolve your public domain internally while keeping
 
 ### SSL / HTTPS Issues Behind a Reverse Proxy
 
-**Symptom:** Requests fail with SSL certificate errors when Cal.diy is behind a load balancer or reverse proxy that handles HTTPS termination.
+**Symptom:** Requests fail with SSL certificate errors when Cal.ly is behind a load balancer or reverse proxy that handles HTTPS termination.
 
 **Solution (choose one):**
 
@@ -213,6 +213,6 @@ yarn workspace @calcom/prisma db-deploy
 
 If your issue is not listed here:
 
-1. Search the [Cal.diy GitHub Issues](https://github.com/calcom/cal.diy/issues) — many common problems have documented solutions in issue threads.
+1. Search the [Cal.ly GitHub Issues](https://github.com/calcom/cal.diy/issues) — many common problems have documented solutions in issue threads.
 2. Check the [Cal.com Community](https://community.cal.com) forum.
 3. Review the [Docker configuration](./docker) and [Installation guide](./installation) for any steps you may have missed.

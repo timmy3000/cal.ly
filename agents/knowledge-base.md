@@ -1,6 +1,6 @@
 # Knowledge Base - Domain & Product-Specific Information
 
-This file contains domain knowledge about the Cal.diy product and codebase. For coding guidelines and rules, see [`rules/`](rules/).
+This file contains domain knowledge about the Cal.ly product and codebase. For coding guidelines and rules, see [`rules/`](rules/).
 
 ## When working with managed event types
 
@@ -52,9 +52,9 @@ Control logging verbosity by setting `NEXT_PUBLIC_LOGGER_LEVEL` in .env:
 - 5: error
 - 6: fatal
 
-### Cal.diy Event Identification
+### Cal.ly Event Identification
 
-Cal.diy events in Google Calendar can be identified by checking if the iCalUID ends with `@Cal.diy` (e.g., `2GBXSdEixretciJfKVmYN8@Cal.diy`). This identifier is used to distinguish Cal.diy bookings from other calendar events for data storage and privacy purposes.
+Cal.ly events in Google Calendar can be identified by checking if the iCalUID ends with `@Cal.ly` (e.g., `2GBXSdEixretciJfKVmYN8@Cal.ly`). This identifier is used to distinguish Cal.ly bookings from other calendar events for data storage and privacy purposes.
 
 ### UI Component Locations
 
@@ -87,7 +87,7 @@ To make persistent changes to API documentation, use NestJS decorators (`@ApiQue
 
 ### Workflows vs Webhooks
 
-Workflows and webhooks are two completely separate features in Cal.diy with different implementations and file structures:
+Workflows and webhooks are two completely separate features in Cal.ly with different implementations and file structures:
 - Workflow constants: `packages/features/ee/workflows/lib/constants.ts`
 - NOT in the webhooks directory
 

@@ -1,6 +1,6 @@
 # GCP
 
-Deploying Cal.diy on Google Cloud Platform (GCP). In this guide, we will go over the steps to deploy Cal.diy on Google Cloud Platform (GCP). We will cover how to create a virtual machine, configure it, install Docker, and finally deploy the Cal.diy application.
+Deploying Cal.ly on Google Cloud Platform (GCP). In this guide, we will go over the steps to deploy Cal.ly on Google Cloud Platform (GCP). We will cover how to create a virtual machine, configure it, install Docker, and finally deploy the Cal.ly application.
 
 ## One Click Deployment
 
@@ -73,13 +73,13 @@ Start the Docker service using the following command:
 sudo systemctl start docker
 ```
 
-### 4. Deploying Cal.diy
+### 4. Deploying Cal.ly
 
-Now that Docker is installed and running, you can deploy Cal.diy on your virtual machine.
+Now that Docker is installed and running, you can deploy Cal.ly on your virtual machine.
 
 #### Pull the Docker Image
 
-Use the following command to pull the Cal.diy Docker image from Docker Hub:
+Use the following command to pull the Cal.ly Docker image from Docker Hub:
 
 ```bash
 docker pull calcom/cal.diy
@@ -93,10 +93,10 @@ Run the Docker container using the following command:
 docker run -d -p 80:80 calcom/cal.diy
 ```
 
-This command maps port 80 on your local machine to port 80 inside the container, so you can access Cal.diy from outside the container.
+This command maps port 80 on your local machine to port 80 inside the container, so you can access Cal.ly from outside the container.
 
-#### Access Cal.diy
+#### Access Cal.ly
 
-Open a web browser and navigate to `http://localhost`. You should now be able to access the Cal.diy homepage.
+Open a web browser and navigate to `http://localhost`. You should now be able to access the Cal.ly homepage.
 
-Congratulations! You have successfully deployed Cal.diy on Google Cloud Platform.
+Congratulations! You have successfully deployed Cal.ly on Google Cloud Platform.

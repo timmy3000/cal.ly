@@ -1,4 +1,4 @@
-# Cal.diy Agent Documentation Index
+# Cal.ly Agent Documentation Index
 
 - **[../AGENTS.md](../AGENTS.md)** - Main guide (structure, tech stack, commands, examples)
 - **[commands.md](commands.md)** - Command reference

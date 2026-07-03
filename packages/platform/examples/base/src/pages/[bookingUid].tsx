@@ -20,8 +20,8 @@ export default function Bookings(props: { calUsername: string; calEmail: string 
   });
 
   if (!Array.isArray(booking)) {
-    const startTime = dayjs(booking?.start).format(12 === 12 ? "h:mma" : "HH:mm");
-    const endTime = dayjs(booking?.end).format(12 === 12 ? "h:mma" : "HH:mm");
+    const startTime = dayjs(booking?.start).format("h:mma");
+    const endTime = dayjs(booking?.end).format("h:mma");
     const date = dayjs(booking?.start).toDate();
     const dateToday = dayjs(booking?.start).date();
     const year = dayjs(booking?.start).year();
@@ -47,7 +47,7 @@ export default function Bookings(props: { calUsername: string; calEmail: string 
                 <h1 className="text-xl font-bold" data-testid="booking-success-message">
                   This meeting is scheduled
                 </h1>
-                <p>We sent an email with a calendar invitation with the details to everyone.</p>
+                <p>We've prepared a calendar invite with all the details. Add it to your calendar using the info below.</p>
               </div>
             ) : (
               <div className="mx-2 my-4 flex flex-col items-center justify-center text-center">

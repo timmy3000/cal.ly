@@ -2,7 +2,7 @@
 
 <!-- Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
-Note: Cal.diy is a community-maintained open-source project. Contributions here do NOT flow to Cal.com's production service. -->
+Note: Cal.ly is a community-maintained open-source project. Contributions here do NOT flow to Cal.com's production service. -->
 
 - Fixes #XXXX (GitHub issue number)
 
