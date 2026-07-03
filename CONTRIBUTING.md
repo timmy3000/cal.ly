@@ -1,6 +1,6 @@
-# Contributing to Cal.diy
+# Contributing to Cal.ly
 
-> **Important:** Cal.diy is a community-driven, open-source fork of Cal.com. Contributions made here **do not** get merged into Cal.com's production service — Cal.com is now closed-source. This repo is maintained independently by the community under the MIT license.
+> **Important:** Cal.ly is a community-driven, open-source fork of Cal.com. Contributions made here **do not** get merged into Cal.com's production service — Cal.com is now closed-source. This repo is maintained independently by the community under the MIT license.
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 

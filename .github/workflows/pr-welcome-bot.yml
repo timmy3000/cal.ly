@@ -29,11 +29,11 @@ jobs:
             }
 
             const body = [
-              `Welcome to **Cal.diy**, @${pr.user.login}! Thanks for opening this pull request.`,
+              `Welcome to **Cal.ly**, @${pr.user.login}! Thanks for opening this pull request.`,
               "",
               "A few things to keep in mind:",
               "",
-              "- **This is Cal.diy, not Cal.com.** Cal.diy is a community-driven, fully open-source fork of Cal.com licensed under MIT. Your changes here will be part of Cal.diy — they will **not** be deployed to the Cal.com production app.",
+              "- **This is Cal.ly, not Cal.com.** Cal.ly is a community-driven, fully open-source fork of Cal.com licensed under MIT. Your changes here will be part of Cal.ly — they will **not** be deployed to the Cal.com production app.",
               "- Please review our [Contributing Guidelines](https://github.com/calcom/cal.diy/blob/main/CONTRIBUTING.md) if you haven't already.",
               "- Make sure your PR title follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format.",
               "",

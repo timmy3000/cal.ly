@@ -1,6 +1,6 @@
 # Calendars API Reference
 
-Detailed documentation for calendar integration endpoints in the Cal.diy API v2.
+Detailed documentation for calendar integration endpoints in the Cal.ly API v2.
 
 ## Endpoints Overview
 
@@ -284,10 +284,10 @@ GET /v2/calendars/{calendar}/events/{eventUid}
    POST /v2/calendars/google-calendar/connect
 
 2. User selects which calendars to check for conflicts
-   (Done via Cal.diy dashboard)
+   (Done via Cal.ly dashboard)
 
 3. User sets destination calendar for new bookings
-   (Done via Cal.diy dashboard)
+   (Done via Cal.ly dashboard)
 
 4. When checking slots:
    - API fetches busy times from all selected calendars
@@ -298,9 +298,9 @@ GET /v2/calendars/{calendar}/events/{eventUid}
    - Confirmation emails sent to attendees
 ```
 
-### Cal.diy Event Identification
+### Cal.ly Event Identification
 
-Cal.diy events in external calendars can be identified by their iCalUID ending with `@Cal.diy` (e.g., `2GBXSdEixretciJfKVmYN8@Cal.diy`).
+Cal.ly events in external calendars can be identified by their iCalUID ending with `@Cal.ly` (e.g., `2GBXSdEixretciJfKVmYN8@Cal.ly`).
 
 ## Team Calendar Integration
 

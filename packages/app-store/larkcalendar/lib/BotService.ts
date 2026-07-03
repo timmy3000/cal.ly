@@ -7,12 +7,12 @@ const log = logger.getSubLogger({ prefix: [`[[LarkTenantCredential]`] });
 
 const msg = {
   en_us: {
-    title: "Welcome to Cal.diy!",
+    title: "Welcome to Cal.ly!",
     content: [
       [
         {
           tag: "text",
-          text: "Cal.diy is an open source scheduling infrastructure.",
+          text: "Cal.ly is an open source scheduling infrastructure.",
         },
       ],
       [
