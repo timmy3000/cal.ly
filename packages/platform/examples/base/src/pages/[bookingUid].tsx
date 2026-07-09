@@ -47,7 +47,7 @@ export default function Bookings(props: { calUsername: string; calEmail: string 
                 <h1 className="text-xl font-bold" data-testid="booking-success-message">
                   This meeting is scheduled
                 </h1>
-                <p>We've prepared a calendar invite with all the details. Add it to your calendar using the info below.</p>
+                <p>We sent an email with a calendar invitation with the details to everyone.</p>
               </div>
             ) : (
               <div className="mx-2 my-4 flex flex-col items-center justify-center text-center">
