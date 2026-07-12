@@ -135,7 +135,7 @@ const LocationInputDialog = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent>
+      <DialogContent enableOverflow>
         <DialogHeader title={t(title)} />
         <div className="space-y-4">
           <div>
@@ -336,9 +336,11 @@ const HostLocationRow = ({
             placeholder={t("select_location")}
             options={hostAnnotatedOptions}
             value={selectedOption}
+            menuPlacement="bottom"
+            menuPosition="absolute"
             isSearchable={false}
             className="w-72 text-sm"
-            menuPlacement="auto"
+            // menuPlacement="auto"
             menuPortalTarget={typeof document !== "undefined" ? document.body : null}
             styles={{
               menuPortal: (base) => ({ ...base, zIndex: 9999 }) as CSSObjectWithLabel,
@@ -497,7 +499,7 @@ const MassApplyLocationDialog = ({ isOpen, onClose, onApply, isApplying }: MassA
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent>
+      <DialogContent enableOverflow>
         <DialogHeader title={t("apply_location_to_all_hosts")} />
         <div className="space-y-4">
           <div>

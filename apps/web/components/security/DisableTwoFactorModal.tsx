@@ -66,7 +66,7 @@ const DisableTwoFactorAuthModal = ({ onDisable, onCancel }: DisableTwoFactorAuth
 
   return (
     <Dialog open={true}>
-      <DialogContent>
+      <DialogContent enableOverflow>
         <Form form={form} handleSubmit={handleDisable}>
           <TwoFactorModalHeader title={t("disable_2fa")} description={t("disable_2fa_recommendation")} />
 

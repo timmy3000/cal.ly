@@ -17,7 +17,7 @@ export default function ModalContainer(
   return (
     <div className="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
       <Dialog open={props.isOpen} onOpenChange={props.onExit}>
-        <DialogContent>
+        <DialogContent enableOverflow>
           <div
             className={classNames(
               "bg-default inline-block w-full transform text-left align-bottom transition-all sm:align-middle",

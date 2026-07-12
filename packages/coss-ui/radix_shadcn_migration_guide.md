@@ -378,7 +378,7 @@ The API is significantly different from shadcn/ui (cmdk). Please review both doc
   <DialogTrigger asChild>
     <Button variant="outline">Show Dialog</Button>
   </DialogTrigger>
-  <DialogContent>
+  <DialogContent enableOverflow>
     <DialogHeader>
       <DialogTitle>Dialog Title</DialogTitle>
       <DialogDescription>Dialog Description</DialogDescription>

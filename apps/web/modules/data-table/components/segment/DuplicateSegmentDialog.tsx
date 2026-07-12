@@ -73,7 +73,7 @@ export function DuplicateSegmentDialog({
           onClose();
         }
       }}>
-      <DialogContent>
+      <DialogContent enableOverflow>
         <DialogHeader title={t("duplicate_segment")} />
         <Form form={form} handleSubmit={handleSubmit}>
           <div className="stack-y-4">
