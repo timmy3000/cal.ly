@@ -99,7 +99,7 @@ describe("Dialog", () => {
           <DialogTrigger asChild>
             <button>Open Dialog</button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent enableOverflow>
             <p>{content}</p>
           </DialogContent>
         </Dialog>

@@ -40,7 +40,7 @@ export const ChargeCardDialog = (props: IRescheduleDialog) => {
 
   return (
     <Dialog open={isOpenDialog} onOpenChange={setIsOpenDialog}>
-      <DialogContent>
+      <DialogContent enableOverflow>
         <div className="flex flex-row space-x-3">
           <div className=" bg-subtle flex h-10 w-10 shrink-0 justify-center rounded-full">
             <CreditCardIcon className="m-auto h-6 w-6" />

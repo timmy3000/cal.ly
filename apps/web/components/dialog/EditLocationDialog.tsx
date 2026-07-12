@@ -222,7 +222,7 @@ export const EditLocationDialog = (props: ISetLocationDialog) => {
 
   return (
     <Dialog open={isOpenDialog} onOpenChange={(open) => setShowLocationModal(open)}>
-      <DialogContent>
+      <DialogContent enableOverflow>
         <Form
           form={locationFormMethods}
           handleSubmit={async (values) => {
@@ -297,6 +297,8 @@ export const EditLocationDialog = (props: ISetLocationDialog) => {
                             name="location"
                             defaultValue={selection}
                             options={locationOptions}
+                            menuPlacement="bottom"
+                            menuPosition="absolute"
                             isSearchable
                             onChange={(val) => {
                               if (val) {

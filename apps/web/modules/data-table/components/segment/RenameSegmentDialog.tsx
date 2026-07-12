@@ -57,7 +57,7 @@ export function RenameSegmentDialog({
           onClose();
         }
       }}>
-      <DialogContent>
+      <DialogContent enableOverflow>
         <DialogHeader title={t("rename_segment")} />
         <Form form={form} handleSubmit={handleSubmit}>
           <div className="stack-y-4">
